@@ -3,7 +3,12 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const mime = require('mime-types');
 
+ const cors = require("cors");
+
 const app = express();
+
+// Enable CORS for all domains
+app.use(cors());
 app.use(bodyParser.json());
 
 const upload = multer(); // To handle file uploads
@@ -50,9 +55,9 @@ app.post('/bfhl', upload.single('file'), (req, res) => {
 
   res.json({
     is_success: true,
-    user_id: 'john_doe_17091999',
-    email: 'john@xyz.com',
-    roll_number: 'ABCD123',
+    user_id: 'Anuj Mishra',
+    email: 'anujmishra210581@acropolis.in',
+    roll_number: '0827IT211015',
     numbers,
     alphabets,
     highest_lowercase_alphabet: highestLowerCase ? [highestLowerCase] : [],
